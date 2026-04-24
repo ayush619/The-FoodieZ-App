@@ -2,14 +2,13 @@ package com.ayush.springmvcboot;
 
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -29,10 +28,11 @@ public class homecontroller {
 	
 	
 	
-	@RequestMapping("/")
+	@GetMapping("/first")
 	public String home()
 	{
-		return "Login.jsp";
+		System.out.println("print high");
+		return "Login";
 	}
 	
 	@PostMapping("login")
